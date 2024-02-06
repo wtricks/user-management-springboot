@@ -97,7 +97,7 @@ public class CustomerService {
 
     // Helper method to validate the sorting column
     private boolean isValidSortingColumn(String columnName) {
-        String[] validColumns = new String[]{"first_name", "last_name", "street", "city", "address", "phone", "email", "state"};
+        String[] validColumns = new String[]{"firstName", "lastName", "street", "city", "address", "phone", "email", "state"};
         for(int i = 0; i < 8; i++) {
             if (validColumns[i].equals(columnName)) {
                 return true;

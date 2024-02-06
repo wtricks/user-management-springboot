@@ -104,7 +104,7 @@ public class CustomerController {
         @RequestParam(defaultValue = "1", value = "limit") int limit,
         @RequestParam(defaultValue = "1", value = "page") int page,
         @RequestParam(defaultValue = "", value = "search") String search,
-        @RequestParam(defaultValue = "first_name", value = "sortBy") String sortBy,
+        @RequestParam(defaultValue = "firstName", value = "sortBy") String sortBy,
         @RequestParam(defaultValue = "asc", value = "order") String order
     ) {
         ResponseDto response = new ResponseDto();

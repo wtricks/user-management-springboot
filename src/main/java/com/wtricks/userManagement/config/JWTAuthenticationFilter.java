@@ -36,8 +36,6 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
     ) throws ServletException, IOException {
         final String authHeader = req.getHeader("Authorization");
         final String jwt;
-
-        logger.debug(authHeader);
         
         // check 'Authorization' header.
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
@@ -66,6 +64,8 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
                 authenticationToken.setDetails(
                     new WebAuthenticationDetailsSource().buildDetails(req)
                 );
+
+                logger.debug(authenticationToken);
 
                 // at the last we're setting authentication context
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
