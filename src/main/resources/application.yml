@@ -1,0 +1,42 @@
+spring:
+    # DataSource Configuration
+    datasource:
+        url: jdbc:h2:mem:user-db
+        driver-class-name: org.h2.Driver
+        username: sa
+        password: 
+
+    # H2 Console Configuration
+    h2:
+        console:
+            settings: 
+                web-allow-others: true
+            enabled: true
+            path: /h2-console
+
+    # JPA configuration
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+
+        # Hibernate configuration
+        properties:
+            hibernate.format_sql: true
+            hibernate.use_sql_comments: true
+            hibernate.type: trace
+
+# logging
+logging:
+    level:
+        com:
+            wtricks: DEBUG
+
+
+application:
+    jwt:
+        secret_key: A5CB2C87BB336A6C30DECDC177983EDCD4FA21B44B1621B209F08F076A7CE771801F0FB1FA75F7CFA4402F4394D47BC12FF6B42E886388033A7B9ABFBFA08A89CF2BED86DCD362D0559847F08B550E56FAA322C22129D743BE2F1C02AE9D730BCAE6EF401977451229A5361B45A9CD432C47C3D9CBF6387477474EBFDAE05A0C
+        expiration_time: 86400000
+
+    allowed-origin: http://localhost:5055
